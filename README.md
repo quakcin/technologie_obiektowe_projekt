@@ -15,8 +15,7 @@
  
 **Spis technologii:**
 
-- php
-- javascript (node)
+- php + composer
 
 ### 2. Lista Funkcjonalności
   - a. Opracowanie formatu serializacji obiektów do plików CSV
