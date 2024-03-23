@@ -4,7 +4,7 @@
 
 **Zespół projektowy:** Maciej Bandura, Marcin Ślusarczyk; 1ID21b
 
-**Wybrany temat:** Emulacja programowania obiektowego w językach nieobiektowych np. C
+**Wybrany temat:** CSV + Spreedsheet mapper
 
 **Kontakt:** maciej.bandura@outlook.com; marcindev@int.pl
 
@@ -15,20 +15,18 @@
  
 **Spis technologii:**
 
-- jako język obiektowy zostanie przyjęty język Java, w nim zostanie napisany preprocesor
-
-- język C, do niego zostaną wprowadzone mechanizmy wspierające programowanie obiektowe
-
-- kompilator gcc (GNU)
+- php
+- javascript (node)
 
 ### 2. Lista Funkcjonalności
-  - a. Opracowanie ogólnej mechaniki projektu oraz zdefiniowanie podziału pracy
-  - b. Przestrzenie nazw
-  - c. Pola i metody statyczne
-  - d. Abstrakcyjne metody i klasy
-  - e. Tworzenie i usuwanie obiektów
-  - f. Dziedziczenie pojedyńcze
-  - g. Hermetyzacja
+  - a. Opracowanie formatu serializacji obiektów do plików CSV
+  - b. Opracowanie formatu serializacji obiektów do arkusza kaluklacyjngo
+  - c. Stworzenie mecheniki zapisu obiektów do pliku CSV
+  - d. Stworzenie mecheniki odczytu obiektów z pliku CSV
+  - e. Stworzenie mecheniki zapisu obiektów do arkusza kalkulacyjnego
+  - f. Stworzenie mecheniki odczytu obiektów z arkusza kalkulacyjnego
+  - g. Rozszerzenie mappera CSV o deklaracje klas + settery i gettery
+  - h. Rozszerzenie mappera Arkusza Kalukacyjnego o deklaracje klas + settery i gettery
 
 
 ### 3. Harmonogram
@@ -41,18 +39,15 @@
   | e | 06.05 | 
   | f | 13.05 | 
   | g | 20.05 | 
+  | h | 27.05 | 
 
   - Testowanie oraz obrona projektu 03.06 - 10.06
 
 ### 4. Podział pracy
-  | Punkt | Osoba |
-  |:-:|:-:|
-  | a | MB + MŚ |
-  | b | MB |
-  | c | MŚ |
-  | d | MB |
-  | e | MŚ |
-  | f | MB |
-  | g | MŚ |
+  Mapper CSV - Marcin Ślusarczyk
+  
+  Mapper Arkuszów Kalkulacyjnych - Maciej Bandura
+  
+  Opracowanie - Praca łączona
 
 <img src="https://tu.kielce.pl/wp-content/uploads/2023/05/logo-politechnika-swietokrzyska-red.png" width="256"/>
