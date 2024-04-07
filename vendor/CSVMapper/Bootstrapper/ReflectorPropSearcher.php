@@ -29,16 +29,19 @@
 
 namespace CSVMapper\Boostrapper;
 
+
 /**
  * ...
  */
 class ReflectorPropSearcher
 {
   private $reflectorPropExtractor;
+  private $reflector;
 
   public function __construct ($reflector)
   {
     $this->reflectorPropExtractor = new ReflectorPropExtractor($reflector);
+    $this->reflector = $reflector;
   }
 
   /**
@@ -48,14 +51,15 @@ class ReflectorPropSearcher
   public function find ()
   {
     $it = $this->reflectorPropExtractor->extract();
+    $props = [];
 
     while ($it->hasNext()) { 
       $it = $it->next();
       if ($it->hasAnnotation()) {
-        return $it->getProp();
+        $props[] = $it;
       }
     }
 
-    /** TODO: Add error check */
+    return $props;
   }
 }

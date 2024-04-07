@@ -33,6 +33,7 @@
 require 'vendor/autoload.php';
 
 use CSVMapper\Boostrapper\CSVMapperInjector;
+use CSVMapper\ErrorHandling\Warnings;
 
 
 class App 
@@ -46,16 +47,20 @@ class App
 
   /**
    * @CSVMapper
+   * @CSVMapperPath(./file1.csv)
    */
-  private $csvMapper;
+  private $csvMapper1;
 
-  private $garbage;
-
-  private $trash;
+  /**
+   * @CSVMapper
+   * @CSVMapperRuntimeReader - TODO: Dodać klasę do ekstrakcji wielu anotacji
+   */
+  private $csvMapper2;
 
   public function main ()
   {
-    $this->csvMapper->read();
+    $this->csvMapper1->read();
+    $this->csvMapper2->read();
   }
 
 }

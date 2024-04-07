@@ -40,6 +40,23 @@ class ReflectorPropIterator extends Iterator
     return preg_match('/@CSVMapper/', $this->docs) > 0;
   }
 
+  /**
+   * Ekstraktuje ścieżkę do mapowanego pliku
+   */
+  public function getPath ()
+  {
+    if (preg_match("/@CSVMapperPath\((.*?)\)/", $this->docs, $matches)) {
+      return $matches[0];
+    }
+
+    return false;
+  }
+
+  public function hasPath ()
+  {
+    return preg_match("/@CSVMapperPath\((.*?)\)/", $this->docs) > 0;
+  }
+
   public function getDocs()
   {
     return $this->docs;

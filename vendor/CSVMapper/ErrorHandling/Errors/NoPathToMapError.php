@@ -27,54 +27,20 @@
  * SOFTWARE.
  */
 
-namespace CSVMapper\Boostrapper;
+namespace CSVMapper\ErrorHandling\Errors;
 
-use ReflectionClass;
-use CSVMapper\CSVMapper;
+use CSVMapper\ErrorHandling;
+use CSVMapper\ErrorHandling\Errors;
 
-use CSVMapper\ErrorHandling\Warnings\NoFieldToInjectWarning;
-use CSVMapper\ErrorHandling\Errors\NoPathToMapError;
-
-class ReflectorInjector
+class NoPathToMapError extends Errors
 {
-  /**
-   * Poszukiwacz pola z anotacją @CSVMapper
-   */
-  private $reflectionClass;
-  private $context;
-
-  public function __construct ($context)
+  public function __construct ($fieldName, $classDef)
   {
-    $reflectionClass = new ReflectionClass($context::class);
-    $this->reflectorPropSearcher = new ReflectorPropSearcher($reflectionClass);
-    $this->context = $context;
-  }
-
-  /**
-   * Metoda wszystrykująca CSVMappera do anotowanego pola
-   */
-  public function inject ()
-  {
-    $fields = $this->reflectorPropSearcher->find();
-    if (empty($fields)) {
-      new NoFieldToInjectWarning($this->context::class);
-      return;
-    }
-
-    foreach ($fields as $field) {
-      $this->injectField($field);
-    }
-  }
-
-  private function injectField ($field)
-  {
-    $prop = $field->getProp();
-
-    if (!$field->hasPath()) {
-      new NoPathToMapError($prop->getName(), $this->context::class);
-    }
-
-    $prop->setAccessible(true); /** TODO: remember old state! */
-    $prop->setValue($this->context, new CSVMapper());
+    /**
+     * TODO: W przyszłości, nie każdy CSVMapper będzie potrzebwoał
+     *       zadeklarowanej ścieżki w annotacji, będzie można to
+     *       zrobić już w gotowym obiekcie przy użyciu CSVMapperSettings
+     */
+    $this->raise("Field $classDef::$fieldName uses CSVMapper but doesn't provide path to map from!");
   }
 }

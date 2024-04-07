@@ -27,54 +27,15 @@
  * SOFTWARE.
  */
 
-namespace CSVMapper\Boostrapper;
+namespace CSVMapper\ErrorHandling\Warnings;
 
-use ReflectionClass;
-use CSVMapper\CSVMapper;
+use CSVMapper\ErrorHandling;
+use CSVMapper\ErrorHandling\Warnings;
 
-use CSVMapper\ErrorHandling\Warnings\NoFieldToInjectWarning;
-use CSVMapper\ErrorHandling\Errors\NoPathToMapError;
-
-class ReflectorInjector
+class NoFieldToInjectWarning extends Warnings
 {
-  /**
-   * Poszukiwacz pola z anotacją @CSVMapper
-   */
-  private $reflectionClass;
-  private $context;
-
-  public function __construct ($context)
+  public function __construct ($classDef)
   {
-    $reflectionClass = new ReflectionClass($context::class);
-    $this->reflectorPropSearcher = new ReflectorPropSearcher($reflectionClass);
-    $this->context = $context;
-  }
-
-  /**
-   * Metoda wszystrykująca CSVMappera do anotowanego pola
-   */
-  public function inject ()
-  {
-    $fields = $this->reflectorPropSearcher->find();
-    if (empty($fields)) {
-      new NoFieldToInjectWarning($this->context::class);
-      return;
-    }
-
-    foreach ($fields as $field) {
-      $this->injectField($field);
-    }
-  }
-
-  private function injectField ($field)
-  {
-    $prop = $field->getProp();
-
-    if (!$field->hasPath()) {
-      new NoPathToMapError($prop->getName(), $this->context::class);
-    }
-
-    $prop->setAccessible(true); /** TODO: remember old state! */
-    $prop->setValue($this->context, new CSVMapper());
+    $this->raise("Class $classDef uses CSVMapperInjector but @CSVMapper wasn't found. Make sure csvMapper field is annointed with @CSVMapper for its dependencies to be injected.");
   }
 }
