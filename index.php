@@ -74,13 +74,7 @@ class App
    * @CSVMapper
    * @CSVMapperPath(./file1.csv)
    */
-  private $csvMapper1;
-
-  /**
-   * @CSVMapper
-   * @CSVMapperRuntimeReader - TODO: Dodać klasę do ekstrakcji wielu anotacji
-   */
-  private $csvMapper2;
+  private $csvMapper;
 
   public function main ()
   {
