@@ -28,6 +28,7 @@
  */
 
 require './vendor/CSVMapper/Serializer/Serializer.php';
+require './vendor/CSVMapper/Serializer/SerializerWritter.php';
 
 require './vendor/CSVMapper/CSVMapper.php';
 require './vendor/CSVMapper/Iterator/Iterator.php';

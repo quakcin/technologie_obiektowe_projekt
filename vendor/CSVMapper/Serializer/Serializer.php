@@ -61,7 +61,7 @@ class Serializer
     }
 
     return (object) [
-      "key" => "~" . $key,
+      "key" => $csvKey,
       "value" => implode(",", $keys)
     ];
   }
@@ -81,6 +81,11 @@ class Serializer
     }
 
     return -1;
+  }
+
+  public function write ()
+  {
+    (new SerializerWriter($this->pool))->write();
   }
 
   /**
@@ -129,8 +134,16 @@ class Serializer
       }
     }
 
+    /**
+     * Zserializowanie id
+     */
+    $cols[] = (object) [
+      "key" => "id#",
+      "value" => $id
+    ];
+
     /** TODO: Move object decl abolve, so no recursive loops stuff */
-    $this->pool[get_class($obj)][] = (object) ["id" => $id, "cols" => (object) $cols];
+    $this->pool[get_class($obj)][] = $cols;
     return $id;
   }
 }

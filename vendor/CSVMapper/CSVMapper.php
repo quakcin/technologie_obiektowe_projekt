@@ -49,6 +49,6 @@ class CSVMapper
   {
     $serializer = new Serializer();
     $serializer->serialize($obj);
-    $serializer->dump();
+    $serializer->write($obj);
   }
 }

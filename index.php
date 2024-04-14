@@ -37,13 +37,16 @@ use CSVMapper\Boostrapper\CSVMapperInjector;
 class C
 {
   private $x = 10;
+  public function __construct ($x) {
+    $this->x = $x;
+  }
 }
 
 class B
 {
   private $c;
-  public function __construct () {
-    $this->c = new C();
+  public function __construct ($x) {
+    $this->c = new C($x);
   }
 }
 
@@ -53,7 +56,7 @@ class A
   public function __construct () {
     $this->bFields = [];
     for ($i = 0; $i < 3; $i++) {
-      $this->bFields[] = new B();
+      $this->bFields[] = new B($i * 100);
     }
   }
 }
