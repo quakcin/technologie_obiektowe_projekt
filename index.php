@@ -33,16 +33,41 @@
 require 'vendor/autoload.php';
 
 use CSVMapper\Boostrapper\CSVMapperInjector;
-use CSVMapper\ErrorHandling\Warnings;
 
+class C
+{
+  private $x = 10;
+}
+
+class B
+{
+  private $c;
+  public function __construct () {
+    $this->c = new C();
+  }
+}
+
+class A
+{
+  private $bFields;
+  public function __construct () {
+    $this->bFields = [];
+    for ($i = 0; $i < 3; $i++) {
+      $this->bFields[] = new B();
+    }
+  }
+}
 
 class App 
 {
   use CSVMapperInjector;
 
+  private $a;
+
   public function __construct ()
   {
     $this->injectDependencies();
+    $this->a = new A();
   }
 
   /**
@@ -59,8 +84,7 @@ class App
 
   public function main ()
   {
-    $this->csvMapper1->read();
-    $this->csvMapper2->read();
+    $this->csvMapper->save($this->a);
   }
 
 }

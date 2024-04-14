@@ -27,6 +27,8 @@
  * SOFTWARE.
  */
 
+require './vendor/CSVMapper/Serializer/Serializer.php';
+
 require './vendor/CSVMapper/CSVMapper.php';
 require './vendor/CSVMapper/Iterator/Iterator.php';
 
@@ -37,6 +39,7 @@ require './vendor/CSVMapper/ErrorHandling/Warnings.php';
 require './vendor/CSVMapper/ErrorHandling/Warnings/NoFieldToInjectWarning.php';
 
 require './vendor/CSVMapper/ErrorHandling/Errors/NoPathToMapError.php';
+
 
 require './vendor/CSVMapper/Bootstrapper/ReflectorPropIterator.php';
 require './vendor/CSVMapper/Bootstrapper/ReflectorPropExtractor.php';

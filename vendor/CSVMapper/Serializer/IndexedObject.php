@@ -27,28 +27,10 @@
  * SOFTWARE.
  */
 
-namespace CSVMapper;
 
-use CSVMapper\Serializer\Serializer;
-
-class CSVMapper
+class IndexedObject
 {
+  private $id;
+  private $obj;
 
-  public function __construct ()
-  {
-    /* TODO: Add abstract config */
-  }
-
-  public function read ()
-  {
-
-    var_dump("GREAT SUCCESS");
-  }
-  
-  public function save ($obj)
-  {
-    $serializer = new Serializer();
-    $serializer->serialize($obj);
-    $serializer->dump();
-  }
 }
