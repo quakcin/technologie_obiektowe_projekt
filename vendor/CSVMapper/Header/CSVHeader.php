@@ -47,6 +47,8 @@ class CSVHeader
    */
   private $id;
 
+  private $names = [];
+
   /**
    * @param $header - tablica elementów w nagłówku CSV,
    *                  na jej podstawie zostanie odtworzony
@@ -63,8 +65,6 @@ class CSVHeader
     foreach ($header as $tok) {
       $this->parseToken($tok, $pos++);
     }
-
-    var_dump($this);
   }
 
   private function parseToken ($tok, $pos)
@@ -85,8 +85,10 @@ class CSVHeader
     if ($tok[0] == "~") {
       /** Lista */
       $tok = substr($tok, 1);
-      $this->lists[] = $tok;
+      $this->lists[] = $pos;
     }
+
+    $this->names[] = $tok;
   }
 
   /**
@@ -106,6 +108,21 @@ class CSVHeader
   public function getId ()
   {
     return $this->id;
+  }
+
+  public function getNames ()
+  {
+    return $this->names;
+  }
+
+  public function getClassdefFromPosition ($pos)
+  {
+    foreach ($this->paths as $classdef => $p) {
+      if ($pos == $p) {
+        return $classdef;
+      }
+    }
+    return false;
   }
   
 }

@@ -38,7 +38,9 @@ use CSVMapper\File\FileReader;
 class FileManager
 {
 
+  private $objects = [];
   private $readers = [];
+  private $sourceObject = null;
 
   /**
    * Konstruktor przyjmuje ścieżkę do pliku źródłowego
@@ -46,7 +48,7 @@ class FileManager
    */
   public function __construct ($source, $classdef)
   {
-    $this->openReader($this, $source, $classdef);
+    $this->sourceObject = $this->openReader($this, $source, $classdef)[0];
   }
 
   public function openReader ($fileManager, $path, $classdef)
@@ -56,9 +58,19 @@ class FileManager
       return;
     }
 
-    $reader = new FileReader($this, $path);
+    $reader = new FileReader($this, $path, $classdef);
     $this->readers[$classdef] = $reader;
-    $reader->read();
+    return $reader->read();
+  }
 
+  public function getSourceObject ()
+  {
+    return $this->sourceObject;
+  }
+
+
+  public function findObjectByIdAndClassdef ($id, $classdef)
+  {
+    return $this->readers[$classdef]->findObjectById($id);
   }
 }

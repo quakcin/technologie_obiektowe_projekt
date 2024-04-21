@@ -37,7 +37,10 @@ use CSVMapper\Boostrapper\CSVMapperInjector;
 class C
 {
   private $x = 10;
-  public function __construct ($x) {
+  public function __construct () {
+  }
+
+  public function setX ($x) {
     $this->x = $x;
   }
 }
@@ -45,8 +48,13 @@ class C
 class B
 {
   private $c;
-  public function __construct ($x) {
-    $this->c = new C($x);
+  public function __construct () {
+  }
+
+  public function setC($x)
+  {
+    $this->c = new C();
+    $this->c->setX($x);
   }
 }
 
@@ -54,9 +62,13 @@ class A
 {
   private $bFields;
   public function __construct () {
+  }
+
+  public function effects () {
     $this->bFields = [];
     for ($i = 0; $i < 3; $i++) {
-      $this->bFields[] = new B($i * 100);
+      $this->bFields[$i] = new B();
+      $this->bFields[$i]->setC($i * 100);
     }
   }
 }
@@ -71,6 +83,7 @@ class App
   {
     $this->injectDependencies();
     $this->a = new A();
+    $this->a->effects();
   }
 
   /**
@@ -83,6 +96,7 @@ class App
   {
     $this->csvMapper->save($this->a);
     $x = $this->csvMapper->read("./A.csv", A::class);
+    var_dump($x);
   }
 
 }

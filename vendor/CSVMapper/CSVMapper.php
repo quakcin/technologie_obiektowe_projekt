@@ -43,6 +43,7 @@ class CSVMapper
   public function read ($path, $classdef)
   {
     $fileManger = new FileManager($path, $classdef);
+    return $fileManger->getSourceObject();
   }
   
   public function save ($obj)
