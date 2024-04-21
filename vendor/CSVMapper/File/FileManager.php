@@ -27,71 +27,38 @@
  * SOFTWARE.
  */
 
+
+namespace CSVMapper\File;
+
+use CSVMapper\File\FileReader;
+
 /**
- * W taki sposób typowa aplikacja ładowała by naszą bibliotekę
+ * 
  */
-require 'vendor/autoload.php';
-
-use CSVMapper\Boostrapper\CSVMapperInjector;
-
-class C
+class FileManager
 {
-  private $x = 10;
-  public function __construct ($x) {
-    $this->x = $x;
-  }
-}
 
-class B
-{
-  private $c;
-  public function __construct ($x) {
-    $this->c = new C($x);
-  }
-}
-
-class A
-{
-  private $bFields;
-  public function __construct () {
-    $this->bFields = [];
-    for ($i = 0; $i < 3; $i++) {
-      $this->bFields[] = new B($i * 100);
-    }
-  }
-}
-
-class App 
-{
-  use CSVMapperInjector;
-
-  private $a;
-
-  public function __construct ()
-  {
-    $this->injectDependencies();
-    $this->a = new A();
-  }
+  private $readers = [];
 
   /**
-   * @CSVMapper
-   * @CSVMapperPath(./file1.csv)
+   * Konstruktor przyjmuje ścieżkę do pliku źródłowego
+   * którego podaje do pierwszego File
    */
-  private $csvMapper;
-
-  public function main ()
+  public function __construct ($source, $classdef)
   {
-    $this->csvMapper->save($this->a);
-    $x = $this->csvMapper->read("./A.csv", A::class);
+    $this->openReader($this, $source, $classdef);
   }
 
+  public function openReader ($fileManager, $path, $classdef)
+  {
+    if (isset($readers[$classdef])) {
+      echo "reader allready exists";
+      return;
+    }
+
+    $reader = new FileReader($this, $path);
+    $this->readers[$classdef] = $reader;
+    $reader->read();
+
+  }
 }
-
-// $reflectionClass = new ReflectionClass(ExampleClass::class);
-// $props = $reflectionClass->getProperties();
-// foreach ($props as $prop) {
-//   var_dump($prop->getDocComment());
-// }
-
-$app = new App();
-$app->main();

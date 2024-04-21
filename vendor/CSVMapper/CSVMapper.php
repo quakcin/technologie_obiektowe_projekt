@@ -30,6 +30,7 @@
 namespace CSVMapper;
 
 use CSVMapper\Serializer\Serializer;
+use CSVMapper\File\FileManager;
 
 class CSVMapper
 {
@@ -39,10 +40,9 @@ class CSVMapper
     /* TODO: Add abstract config */
   }
 
-  public function read ()
+  public function read ($path, $classdef)
   {
-
-    var_dump("GREAT SUCCESS");
+    $fileManger = new FileManager($path, $classdef);
   }
   
   public function save ($obj)
@@ -51,4 +51,5 @@ class CSVMapper
     $serializer->serialize($obj);
     $serializer->write($obj);
   }
+
 }

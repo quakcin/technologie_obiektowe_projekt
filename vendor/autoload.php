@@ -27,6 +27,11 @@
  * SOFTWARE.
  */
 
+require './vendor/CSVMapper/Header/CSVHeader.php';
+
+require './vendor/CSVMapper/File/FileManager.php';
+require './vendor/CSVMapper/File/FileReader.php';
+
 require './vendor/CSVMapper/Serializer/Serializer.php';
 require './vendor/CSVMapper/Serializer/SerializerWritter.php';
 

@@ -27,71 +27,85 @@
  * SOFTWARE.
  */
 
+namespace CSVMapper\Header;
+
 /**
- * W taki sposób typowa aplikacja ładowała by naszą bibliotekę
+ * 
  */
-require 'vendor/autoload.php';
-
-use CSVMapper\Boostrapper\CSVMapperInjector;
-
-class C
+class CSVHeader
 {
-  private $x = 10;
-  public function __construct ($x) {
-    $this->x = $x;
-  }
-}
+  /**
+   * @var $lists - Nazwy pól będąchcych listami/tablicami
+   */
+  private $lists = [];
+  /**
+   * @var $paths - Nazwy pól linkowanych plikami<->id
+   */
+  private $paths = [];
+  /**
+   * @var $id - pozycja id w pliku
+   */
+  private $id;
 
-class B
-{
-  private $c;
-  public function __construct ($x) {
-    $this->c = new C($x);
-  }
-}
-
-class A
-{
-  private $bFields;
-  public function __construct () {
-    $this->bFields = [];
-    for ($i = 0; $i < 3; $i++) {
-      $this->bFields[] = new B($i * 100);
-    }
-  }
-}
-
-class App 
-{
-  use CSVMapperInjector;
-
-  private $a;
-
-  public function __construct ()
+  /**
+   * @param $header - tablica elementów w nagłówku CSV,
+   *                  na jej podstawie zostanie odtworzony
+   *                  obiekt nagłówka
+   */
+  public function __construct ($header)
   {
-    $this->injectDependencies();
-    $this->a = new A();
+    $this->parseHeader($header);
+  }
+
+  private function parseHeader ($header)
+  {
+    $pos = 0;
+    foreach ($header as $tok) {
+      $this->parseToken($tok, $pos++);
+    }
+
+    var_dump($this);
+  }
+
+  private function parseToken ($tok, $pos)
+  {
+    if (strpos($tok, "#") !== false) {
+      /** Pozycja id w nagłówku */
+      $this->id = $pos;
+      return;
+    }
+
+    if (strpos($tok, "@") !== false) {
+      /** Linkowany obiekt */
+      $subtoks = explode("@", $tok);
+      $this->paths[$subtoks[1]] = $pos;
+      $tok = $subtoks[0];
+    }
+
+    if ($tok[0] == "~") {
+      /** Lista */
+      $tok = substr($tok, 1);
+      $this->lists[] = $tok;
+    }
   }
 
   /**
-   * @CSVMapper
-   * @CSVMapperPath(./file1.csv)
+   * Get; Set;
    */
-  private $csvMapper;
 
-  public function main ()
+  public function getLists ()
   {
-    $this->csvMapper->save($this->a);
-    $x = $this->csvMapper->read("./A.csv", A::class);
+    return $this->lists;
   }
 
+  public function getPaths ()
+  {
+    return $this->paths;
+  }
+
+  public function getId ()
+  {
+    return $this->id;
+  }
+  
 }
-
-// $reflectionClass = new ReflectionClass(ExampleClass::class);
-// $props = $reflectionClass->getProperties();
-// foreach ($props as $prop) {
-//   var_dump($prop->getDocComment());
-// }
-
-$app = new App();
-$app->main();
