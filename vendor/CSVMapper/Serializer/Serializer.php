@@ -51,14 +51,18 @@ class Serializer
 
   private function serializeArray ($key, $values)
   {
+    $isArrayOfObjects = is_object($values[0]);
+    
     $csvKey = "~" . $key;
-    if (count($values) > 0 && is_object($values[0])) {
+    if (count($values) > 0 && $isArrayOfObjects) {
       $csvKey .= "@" . get_class($values[0]);
     }
 
     $keys = [];
     foreach ($values as $value) {
-      $keys[] = $this->serialize($value);;
+      $keys[] = $isArrayOfObjects 
+        ? $this->serialize($value)
+        : $value;
     }
 
     return (object) [
@@ -66,6 +70,7 @@ class Serializer
       "value" => implode(",", $keys)
     ];
   }
+
 
 
   private function findInPool ($obj)

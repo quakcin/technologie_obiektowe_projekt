@@ -90,7 +90,7 @@ class TestLists extends Tests\Test
     
     /** Test serializacji */
     $this->mapper->save($student);
-    $fromFile = $this->mapper->read("./TestList\Student.csv", Student::class);
+    $fromFile = $this->mapper->read("./TestLists\Student.csv", Student::class);
 
     if (get_class($fromFile) != Student::class) {
       return $this->fail();
