@@ -27,49 +27,70 @@
  * SOFTWARE.
  */
 
-
-namespace CSVMapper\File;
-
-use CSVMapper\File\FileReader;
+namespace TestCyclicRelations;
+use CSVMapper\Boostrapper\CSVMapperInjector;
+use Tests;
 
 /**
- * 
+ * Idea, każdy obiekt wskazuje na każdy:
+ * A -> B -> C -> A -> ...
  */
-class FileManager
-{
 
-  private $objects = [];
-  private $readers = [];
-  private $sourceObject = null;
+class A
+{
+  public $b;
+}
+
+class B
+{
+  public $c;
+}
+
+class C
+{
+  public $a;
+}
+
+
+class TestCyclicRelations extends Tests\Test
+{
+  use CSVMapperInjector;
 
   /**
-   * Konstruktor przyjmuje ścieżkę do pliku źródłowego
-   * którego podaje do pierwszego File
+   * @CSVMapper
+   * @CSVMapperPath(./test.csv)
    */
-  public function __construct ($source, $classdef)
+  private $mapper;
+
+  public function __construct ()
   {
-    $this->sourceObject = $this->openReader($this, $source, $classdef)[0];
+    $this->injectDependencies();
+    parent::__construct("Relacje cykliczne");
   }
 
-  public function openReader ($fileManager, $path, $classdef)
+  public function test ()
   {
-    if (isset($this->readers[$classdef])) {
-      return $this->readers[$classdef]->getParsedObjects();
+    /** Test injectora */
+    if ($this->mapper == null) {
+      return $this->fail();
     }
 
-    $reader = new FileReader($this, $path, $classdef);
-    $this->readers[$classdef] = $reader;
-    return $reader->read();
-  }
+    /** Tworzymy łańcuch obiektów z cyklicznymi relacjami */
+    $a = new A;
+    $b = new B;
+    $c = new C;
 
-  public function getSourceObject ()
-  {
-    return $this->sourceObject;
-  }
+    $a->b = $b;
+    $b->c = $c;
+    $c->a = $a;
 
+    $this->mapper->save($a);
+    $fromFile = $this->mapper->read("./TestCyclicRelations\A.csv", A::class);
 
-  public function findObjectByIdAndClassdef ($id, $classdef)
-  {
-    return $this->readers[$classdef]->findObjectById($id);
+    if ($fromFile->b->c->a !== $fromFile) {
+      return $this->fail();
+    }
+
+    return $this->pass();
   }
 }

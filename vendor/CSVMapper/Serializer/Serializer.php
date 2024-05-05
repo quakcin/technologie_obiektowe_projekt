@@ -34,6 +34,7 @@ use ReflectionClass;
 class Serializer
 {
   private $pool = [];
+  private $objs = [];
 
   public function dump ()
   {
@@ -69,14 +70,15 @@ class Serializer
 
   private function findInPool ($obj)
   {
-    $className = get_class($obj);
-    if (!isset($this->pool[$className])) {
-      return -1;
-    }
+    // $className = get_class($obj);
+    // if (!isset($this->pool[$className])) {
+    //   return -1;
+    // }
 
-    foreach ($this->pool[$className] as $pooled) {
-      if ($pooled === $obj) {
-        return $pooled->id;
+    // foreach ($this->pool[$className] as $pooled) {
+    foreach ($this->objs as $key => $val) {
+      if ($val === $obj) {
+        return $key;
       }
     }
 
@@ -106,6 +108,12 @@ class Serializer
      */
     $id = uniqid();
     $cols = [];
+    $this->objs[$id] = &$obj;
+
+    /**
+     * FIXED: Serializujemy obiekt przed wywołaniem rekurencyjengo
+     *        drzewka cyklicznych obiektów
+     */
 
     $reflection = new ReflectionClass($obj);
     foreach ($reflection->getProperties() as $prop) {
@@ -142,7 +150,6 @@ class Serializer
       "value" => $id
     ];
 
-    /** TODO: Move object decl abolve, so no recursive loops stuff */
     $this->pool[get_class($obj)][] = $cols;
     return $id;
   }

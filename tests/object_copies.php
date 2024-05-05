@@ -27,49 +27,87 @@
  * SOFTWARE.
  */
 
-
-namespace CSVMapper\File;
-
-use CSVMapper\File\FileReader;
+namespace TestObjectCopies;
+use CSVMapper\Boostrapper\CSVMapperInjector;
+use Tests;
 
 /**
- * 
+ * Obiekt A zawiera 3 pola:
+ * b1 = b2
+ * oraz b3
  */
-class FileManager
+class A
 {
+  private $b1;
+  private $b2;
+  private $b3;
 
-  private $objects = [];
-  private $readers = [];
-  private $sourceObject = null;
+  public function setB ($b1, $b2, $b3)
+  {
+    $this->b1 = $b1;
+    $this->b2 = $b2;
+    $this->b3 = $b3;
+  }
+
+  public function getB ()
+  {
+    return [$this->b1, $this->b2, $this->b3];
+  }
+
+}
+
+class B
+{
+  public $value = "anything";
+}
+
+
+class TestObjectCopies extends Tests\Test
+{
+  use CSVMapperInjector;
 
   /**
-   * Konstruktor przyjmuje ścieżkę do pliku źródłowego
-   * którego podaje do pierwszego File
+   * @CSVMapper
+   * @CSVMapperPath(./test.csv)
    */
-  public function __construct ($source, $classdef)
+  private $mapper;
+
+  public function __construct ()
   {
-    $this->sourceObject = $this->openReader($this, $source, $classdef)[0];
+    $this->injectDependencies();
+    parent::__construct("Kopie obiektów");
   }
 
-  public function openReader ($fileManager, $path, $classdef)
+  public function test ()
   {
-    if (isset($this->readers[$classdef])) {
-      return $this->readers[$classdef]->getParsedObjects();
+    /** Test injectora */
+    if ($this->mapper == null) {
+      return $this->fail();
     }
 
-    $reader = new FileReader($this, $path, $classdef);
-    $this->readers[$classdef] = $reader;
-    return $reader->read();
-  }
+    /** Zapisywany obiekt A zawiera dwie referencje (b1, b2) na obiekt B1 */
+    $b1 = new B();
 
-  public function getSourceObject ()
-  {
-    return $this->sourceObject;
-  }
+    /** Oraz jedną referencję (b3) na obiekt B3 */
+    $b3 = new B();
 
+    $a = new A();
+    $a->setB($b1, $b1, $b3);
 
-  public function findObjectByIdAndClassdef ($id, $classdef)
-  {
-    return $this->readers[$classdef]->findObjectById($id);
+    $this->mapper->save($a);
+    $fromFile = $this->mapper->read("./TestObjectCopies\A.csv", A::class);
+
+    /** Sprawdzamy kopie referencji */
+    list($rb1, $rb2, $rb3) = $fromFile->getB();
+
+    if ($rb1 !== $rb2) {
+      return $this->fail();
+    }
+
+    if ($rb1 === $rb3 || $rb2 === $rb3) {
+      return $this->fail();
+    }
+
+    return $this->pass();
   }
 }

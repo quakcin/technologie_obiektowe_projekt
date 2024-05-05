@@ -48,7 +48,9 @@ class FileReader
 
   private $classdef;
 
-  private $objects;
+  private $objects = [];
+
+  private $parsedObjects;
 
   public function __construct ($fileManager, $path, $classdef)
   {
@@ -68,7 +70,14 @@ class FileReader
     $this->readFile();
     $this->parseCSVHeader();
     $this->recurseExternalFiles();
-    return $this->parseObjects();
+
+    $this->parsedObjects = $this->parseObjects();
+    return $this->parsedObjects;
+  }
+
+  public function getParsedObjects ()
+  {
+    return $this->parsedObjects;
   }
 
   private function readFile ()
@@ -93,7 +102,6 @@ class FileReader
 
     foreach ($paths as $classdef) {
       $path = "./$classdef.csv";
-      echo "reading path: $path\n";
       $this->fileManager->openReader(
         $this->fileManager,
         $path,
@@ -189,6 +197,8 @@ class FileReader
 
   public function findObjectById ($id)
   {
+    if (in_array($id, $this->objects) == false) {
+    }
     return $this->objects[$id];
   }
 
