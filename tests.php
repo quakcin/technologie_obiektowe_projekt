@@ -39,11 +39,13 @@ include './tests/serialization.php';
 include './tests/types.php';
 include './tests/object_copies.php';
 include './tests/cyclic_relations.php';
+include './tests/lists.php';
 
 use TestTypes;
 use TestSerializacjiObiektow;
 use TestObjectCopies;
 use TestCyclicRelations;
+use TestLists;
 
 /**
  * Abstrakcyjna klasa bazowa dla testu
@@ -88,6 +90,7 @@ class Tests
     $this->tests[] = new TestTypes\TestTypes;
     $this->tests[] = new TestObjectCopies\TestObjectCopies;
     $this->tests[] = new TestCyclicRelations\TestCyclicRelations;
+    $this->tests[] = new TestLists\TestLists;
 
     $this->runTests();
   }
