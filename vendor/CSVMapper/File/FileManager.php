@@ -42,6 +42,8 @@ class FileManager
   private $readers = [];
   private $sourceObject = null;
 
+  private $instanceIndex = [];
+
   /**
    * Konstruktor przyjmuje ścieżkę do pliku źródłowego
    * którego podaje do pierwszego File
@@ -71,5 +73,10 @@ class FileManager
   public function findObjectByIdAndClassdef ($id, $classdef)
   {
     return $this->readers[$classdef]->findObjectById($id);
+  }
+
+  public function &getInstanceIndex ()
+  {
+    return $this->instanceIndex;
   }
 }

@@ -32,9 +32,6 @@ namespace CSVMapper\File;
 use CSVMapper\Header\CSVHeader;
 use ReflectionClass;
 
-/**
- * 
- */
 class FileReader
 {
   private $instances = [];
@@ -122,9 +119,11 @@ class FileReader
     /* Dla każdego obiektu w pliku: */
     for ($ln = 1; $ln < count($this->content); $ln++) {
       $line = $this->content[$ln];
+      $key = $line[count($line) - 1];
 
       /* reflektor - do zarządzania klasami, $obj - instancja do zwrócenia */
-      list($reflector, $obj) = $this->createClassInstance($this->classdef);
+      
+      list($reflector, $obj) = $this->createClassInstance($this->classdef, $key);
       $objects[] = $obj;
       $this->objects[$line[$this->header->getId()]] = $obj;
 
@@ -198,14 +197,28 @@ class FileReader
   public function findObjectById ($id)
   {
     if (in_array($id, $this->objects) == false) {
+      list($ref, $obj) = $this->createClassInstance($this->classdef, $id);
+      return $obj;
     }
+
     return $this->objects[$id];
   }
 
-  private function createClassInstance ($classdef)
+
+
+  private function createClassInstance ($classdef, $key)
   {
+    /**
+     * WARN: Zamiast nowej instancji ReflectionClass potrzebujemy
+     *       istniejacej instancji z jakiegos indeksu, o ile istnieje
+     */
+    if (isset($this->fileManager->getInstanceIndex[$key])) {
+      return $this->fileManager->getInstanceIndex[$key];
+    }
     $reflector = new ReflectionClass($classdef);
     $obj = $reflector->newInstance();
+    $this->fileManager->getInstanceIndex[$key] = [$reflector, $obj];
+
     return [$reflector, $obj];
   }
 }
