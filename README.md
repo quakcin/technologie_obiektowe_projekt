@@ -42,11 +42,4 @@
 
   - Testowanie oraz obrona projektu 03.06 - 10.06
 
-### 4. Podział pracy
-  Mapper CSV - Marcin Ślusarczyk
-  
-  Mapper Arkuszów Kalkulacyjnych - Maciej Bandura
-  
-  Opracowanie - Praca łączona
-
 <img src="https://tu.kielce.pl/wp-content/uploads/2023/05/logo-politechnika-swietokrzyska-red.png" width="256"/>
