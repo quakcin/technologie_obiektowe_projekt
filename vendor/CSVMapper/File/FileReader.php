@@ -80,7 +80,10 @@ class FileReader
   private function readFile ()
   {
     $this->content = [];
-    $str = file_get_contents($this->path);
+    /**
+     * FIX: Nazwy na windowsie
+     */
+    $str = file_get_contents(str_replace("\\", "-", $this->path));
     $lines = explode("\n", $str);
     foreach ($lines as $line) {
       $this->content[] = explode("; ", $line);
@@ -138,6 +141,25 @@ class FileReader
     return $objects;
   }
 
+  /**
+   * Na ten moment, typy mapowane są dynamicznie na bazie ich
+   * zawartości, tak jak to robi PHP
+   */
+  private function fixType ($str)
+  {
+    /* Każda nie numeryczna wartość jest ciągiem znaków */
+    if (!is_numeric($str)) {
+      return $str;
+    }
+
+    /* Z kropką zawsze float */
+    if (strpos($str, ".") !== false) {
+      return (float) $str;
+    }
+
+    return (int) $str;
+}
+
   private function createFieldFromColumn ($reflector, $obj, $pos, $line)
   {
     $header = $this->header->getNames();
@@ -159,7 +181,15 @@ class FileReader
       $values = explode(",", $line[$pos]);
       if (!in_array($pos, $this->header->getPaths())) {
         /** Prymityw */
-        $prop->setValue($obj, $values);
+        /**
+         * FIX: Mapowanie typów
+         */
+        $typedValues = [];
+        foreach ($values as $val) {
+          $typedValues[] = $this->fixType($val);
+        }
+
+        $prop->setValue($obj, $typedValues);
         return;
       }
 
@@ -186,7 +216,7 @@ class FileReader
      * W każdym przeciwnym wypadku, mamy prostą prymitywną wartość
      */
 
-    $prop->setValue($obj, $line[$pos]);
+    $prop->setValue($obj, $this->fixType($line[$pos]));
   }
 
   private function findObjectByIdAndClassdef ($id, $classdef)

@@ -80,7 +80,11 @@ class SerializerWriter
 
     $outs = implode("\n", $outs);
 
-    file_put_contents("./" . $className . ".csv", $outs);
+    /**
+     * FIX: Na systemach windows nie działają nazwy z '\'
+     *      mapper konwertuje je na '-'
+     */
+    file_put_contents("./" . str_replace("\\", "-", $className) . ".csv", $outs);
   }
 
 }
