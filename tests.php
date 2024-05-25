@@ -41,6 +41,8 @@ include './tests/object_copies.php';
 include './tests/cyclic_relations.php';
 include './tests/lists.php';
 include './tests/lists_of_objs.php';
+include './tests/inheretance.php';
+include './tests/composition.php';
 
 use TestTypes;
 use TestSerializacjiObiektow;
@@ -48,6 +50,8 @@ use TestObjectCopies;
 use TestCyclicRelations;
 use TestLists;
 use TestListsObjs;
+use TestDziedziczenia;
+use TestKompozycja;
 
 /**
  * Abstrakcyjna klasa bazowa dla testu
@@ -94,6 +98,8 @@ class Tests
     $this->tests[] = new TestCyclicRelations\TestCyclicRelations;
     $this->tests[] = new TestLists\TestLists;
     $this->tests[] = new TestListsObjs\TestListsObjs;
+    $this->tests[] = new TestDziedziczenia\TestDziedziczenia;
+    $this->tests[] = new TestKompozycja\TestKompozycja;
 
     $this->runTests();
   }
