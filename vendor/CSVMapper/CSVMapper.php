@@ -32,6 +32,7 @@ namespace CSVMapper;
 use CSVMapper\Serializer\Serializer;
 use CSVMapper\File\FileManager;
 use CSVMapper\ExtensionProvider\CSVExtensionProvider;
+use CSVMapper\ExtensionProvider\JSONExtensionProvider;
 use CSVMapper\ExtensionProvider\XMLExtensionProvider;
 
 class CSVMapper
@@ -42,7 +43,8 @@ class CSVMapper
   public function __construct ()
   {
     // $this->extensionProvider = new CSVExtensionProvider();
-    $this->extensionProvider = new XMLExtensionProvider();
+    // $this->extensionProvider = new XMLExtensionProvider();
+    $this->extensionProvider = new JSONExtensionProvider();
   }
 
   public function provideExtension ($provider)
