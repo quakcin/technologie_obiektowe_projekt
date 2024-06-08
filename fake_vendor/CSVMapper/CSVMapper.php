@@ -34,6 +34,7 @@ use CSVMapper\File\FileManager;
 use CSVMapper\ExtensionProvider\CSVExtensionProvider;
 use CSVMapper\ExtensionProvider\JSONExtensionProvider;
 use CSVMapper\ExtensionProvider\XMLExtensionProvider;
+use CSVMapper\ExtensionProvider\XLSExtensionProvider;
 
 class CSVMapper
 {
@@ -44,7 +45,8 @@ class CSVMapper
   {
     // $this->extensionProvider = new CSVExtensionProvider();
     // $this->extensionProvider = new XMLExtensionProvider();
-    $this->extensionProvider = new JSONExtensionProvider();
+    // $this->extensionProvider = new JSONExtensionProvider();
+    $this->extensionProvider = new XLSExtensionProvider();
   }
 
   public function provideExtension ($provider)
