@@ -31,6 +31,7 @@ require './vendor/CSVMapper/Header/CSVHeader.php';
 require './vendor/CSVMapper/ExtensionProviders/ExtensionProvider.php';
 require './vendor/CSVMapper/ExtensionProviders/CSVExtensionProvider.php';
 require './vendor/CSVMapper/ExtensionProviders/XLSExtensionProvider.php';
+require './vendor/CSVMapper/ExtensionProviders/XMLExtensionProvider.php';
 
 require './vendor/CSVMapper/File/FileManager.php';
 require './vendor/CSVMapper/File/FileReader.php';

@@ -1,4 +1,2 @@
-x; id#
-0; 6664a36726f1e
-100; 6664a36726f28
-200; 6664a36726f2f
+<?xml version="1.0"?>
+<Mapping><Definition><Type>x</Type><Type> id#</Type></Definition></Mapping>
