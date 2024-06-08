@@ -33,6 +33,9 @@
 require 'vendor/autoload.php';
 
 use CSVMapper\Boostrapper\CSVMapperInjector;
+use CSVMapper\ExtensionProvider\XLSExtensionProvider;
+
+new XLSExtensionProvider();
 
 class C
 {
@@ -94,8 +97,13 @@ class App
 
   public function main ()
   {
-    $this->csvMapper->save($this->a);
-    $x = $this->csvMapper->read("./A.csv", A::class);
+    $this->csvMapper
+      ->provideExtension(new XLSExtensionProvider())
+      ->save($this->a);
+
+    $x = $this->csvMapper
+      ->read("./A.csv", A::class);
+      
     var_dump($x);
   }
 

@@ -41,6 +41,7 @@ class FileManager
   private $objects = [];
   private $readers = [];
   private $sourceObject = null;
+  private $csvMapper;
 
   private $instanceIndex = [];
 
@@ -48,8 +49,9 @@ class FileManager
    * Konstruktor przyjmuje ścieżkę do pliku źródłowego
    * którego podaje do pierwszego File
    */
-  public function __construct ($source, $classdef)
+  public function __construct ($source, $classdef, $csvMapper)
   {
+    $this->csvMapper = $csvMapper;
     $this->sourceObject = $this->openReader($this, $source, $classdef)[0];
   }
 
@@ -59,7 +61,7 @@ class FileManager
       return $this->readers[$classdef]->getParsedObjects();
     }
 
-    $reader = new FileReader($this, $path, $classdef);
+    $reader = new FileReader($this, $path, $classdef, $this->csvMapper);
     $this->readers[$classdef] = $reader;
     return $reader->read();
   }

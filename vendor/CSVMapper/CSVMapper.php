@@ -31,26 +31,40 @@ namespace CSVMapper;
 
 use CSVMapper\Serializer\Serializer;
 use CSVMapper\File\FileManager;
+use CSVMapper\ExtensionProvider\CSVExtensionProvider;
 
 class CSVMapper
 {
 
+  private $extensionProvider;
+
   public function __construct ()
   {
-    /* TODO: Add abstract config */
+    $this->extensionProvider = new CSVExtensionProvider();
+  }
+
+  public function provideExtension ($provider)
+  {
+    $this->extensionProvider = $provider;
+    return $this;
   }
 
   public function read ($path, $classdef)
   {
-    $fileManger = new FileManager($path, $classdef);
+    $fileManger = new FileManager($path, $classdef, $this);
     return $fileManger->getSourceObject();
   }
   
   public function save ($obj)
   {
-    $serializer = new Serializer();
+    $serializer = new Serializer($this);
     $serializer->serialize($obj);
     $serializer->write($obj);
+  }
+
+  public function getExtensionProvider ()
+  {
+    return $this->extensionProvider;
   }
 
 }

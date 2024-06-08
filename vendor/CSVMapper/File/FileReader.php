@@ -49,11 +49,14 @@ class FileReader
 
   private $parsedObjects;
 
-  public function __construct ($fileManager, $path, $classdef)
+  private $csvMapper;
+
+  public function __construct ($fileManager, $path, $classdef, $csvMapper)
   {
     $this->classdef=  $classdef;
     $this->fileManager = $fileManager;
     $this->path = $path;
+    $this->csvMapper = $csvMapper;
   }
 
   /**
@@ -82,8 +85,10 @@ class FileReader
     $this->content = [];
     /**
      * FIX: Nazwy na windowsie
+     * TODO: extensionProvider
      */
-    $str = file_get_contents(str_replace("\\", "-", $this->path));
+    $str = $this->csvMapper->getExtensionProvider()->read(str_replace("\\", "-", $this->path));
+
     $lines = explode("\n", $str);
     foreach ($lines as $line) {
       $this->content[] = explode("; ", $line);

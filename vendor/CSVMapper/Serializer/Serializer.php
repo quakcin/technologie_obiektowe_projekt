@@ -35,6 +35,12 @@ class Serializer
 {
   private $pool = [];
   private $objs = [];
+  private $csvMapper;
+
+  public function __construct ($csvMapper)
+  {
+    $this->csvMapper = $csvMapper;
+  }
 
   public function dump ()
   {
@@ -92,7 +98,7 @@ class Serializer
 
   public function write ()
   {
-    (new SerializerWriter($this->pool))->write();
+    (new SerializerWriter($this->pool, $this->csvMapper))->write();
   }
 
   /**

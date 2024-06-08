@@ -39,10 +39,12 @@ class SerializerWriter
 {
 
   private $pool;
+  private $csvMapper;
 
-  public function __construct($pool)
+  public function __construct($pool, $csvMapper)
   {
     $this->pool = $pool;
+    $this->csvMapper = $csvMapper;
   }
 
   public function write ()
@@ -83,8 +85,10 @@ class SerializerWriter
     /**
      * FIX: Na systemach windows nie działają nazwy z '\'
      *      mapper konwertuje je na '-'
+     * 
+     * TODO: extensionProvider
      */
-    file_put_contents("./" . str_replace("\\", "-", $className) . ".csv", $outs);
+    $this->csvMapper->getExtensionProvider()->write("./" . str_replace("\\", "-", $className) . ".csv", $outs);
   }
 
 }
