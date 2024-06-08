@@ -42,4 +42,20 @@
 
   - Testowanie oraz obrona projektu 03.06 - 10.06
 
+
+### 4. Uwagi
+
+  Korzystamy z biblioteki: phpoffice/phpspreadsheet
+  Aby zainstalowac nalezy:
+  ```
+    composer require phpoffice/phpspreadsheet
+  ```
+
+  Wymaga to uruchomienia opcji w php.ini:
+  ```
+    extension=gd
+    extension=iconv
+  ```
+
+
 <img src="https://tu.kielce.pl/wp-content/uploads/2023/05/logo-politechnika-swietokrzyska-red.png" width="256"/>

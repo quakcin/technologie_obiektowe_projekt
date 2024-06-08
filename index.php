@@ -30,7 +30,7 @@
 /**
  * W taki sposób typowa aplikacja ładowała by naszą bibliotekę
  */
-require 'vendor/autoload.php';
+require 'fake_vendor/autoload.php';
 
 use CSVMapper\Boostrapper\CSVMapperInjector;
 use CSVMapper\ExtensionProvider\XMLExtensionProvider;

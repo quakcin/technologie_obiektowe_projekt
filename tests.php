@@ -29,7 +29,7 @@
 
 
 namespace Tests;
-require 'vendor/autoload.php';
+require 'fake_vendor/autoload.php';
 
 const ANSI_RED = "\033[0;31m";
 const ANSI_GREEN = "\033[0;32m";

@@ -2,3 +2,6 @@
 *.xml
 *.xls
 *.json
+
+/vendor/
+composer.lock
