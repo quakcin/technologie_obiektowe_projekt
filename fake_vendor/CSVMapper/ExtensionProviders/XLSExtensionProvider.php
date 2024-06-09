@@ -1,6 +1,6 @@
 <?php
 
-  namespace CSVMapper\ExtensionProvider;
+namespace CSVMapper\ExtensionProvider;
 
 use CSVMapper\ExtensionProvider\ExtensionProvider;
 
@@ -22,13 +22,15 @@ class XLSExtensionProvider implements ExtensionProvider
 
   private function initFile ()
   {
-    if (!file_exists($this->fileName)) {
-      $this->spreadSheet = new Spreadsheet();
-      $sheet = $this->spreadSheet->getActiveSheet();
-      $sheet->setTitle('Index');
-      $writer = new Xlsx($this->spreadSheet);
-      $writer->save($this->fileName);
+    if (file_exists($this->fileName)) {
+      return;
     }
+
+    $this->spreadSheet = new Spreadsheet();
+    $sheet = $this->spreadSheet->getActiveSheet();
+    $sheet->setTitle('Index');
+    $writer = new Xlsx($this->spreadSheet);
+    $writer->save($this->fileName);
   }
 
   public function write ($file, $csv)
