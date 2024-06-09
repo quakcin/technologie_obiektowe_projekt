@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{function} \PYG{n+nf}{test} \PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{mapper} \PYG{o}{==} \PYG{k}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{n+nv}{\PYGZdl{}student} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{Student}\PYG{p}{();}
+	\PYG{n+nv}{\PYGZdl{}student}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{setWiek}\PYG{p}{(}\PYG{l+m+mi}{18}\PYG{p}{);}
+	\PYG{n+nv}{\PYGZdl{}student}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{setImie}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Tomek\PYGZdq{}}\PYG{p}{);}
+	
+	\PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{mapper}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{save}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}student}\PYG{p}{);}
+	\PYG{n+nv}{\PYGZdl{}fromFile} \PYG{o}{=} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{mapper}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{read}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}./TestSerializacjiObiektow\PYGZbs{}Student.csv\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{Student}\PYG{o}{::}\PYG{n+na}{class}\PYG{p}{);}
+	
+	\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{get\PYGZus{}class}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile}\PYG{p}{)} \PYG{o}{!=} \PYG{n+nx}{Student}\PYG{o}{::}\PYG{n+na}{class}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{k}{if} \PYG{p}{(}\PYG{n+nv}{\PYGZdl{}student}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{toString}\PYG{p}{()} \PYG{o}{!=} \PYG{n+nv}{\PYGZdl{}fromFile}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{toString}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{pass}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

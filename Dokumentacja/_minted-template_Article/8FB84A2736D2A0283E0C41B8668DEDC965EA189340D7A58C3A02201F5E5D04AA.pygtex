@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n+nt}{\PYGZdq{}entities\PYGZdq{}}\PYG{p}{:[}
+\PYG{+w}{		}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{}model\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}528i\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{} silnik@TestKompozycja\PYGZbs{}\PYGZbs{}Silnik\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{} 666629a031291\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{			}\PYG{n+nt}{\PYGZdq{} id\PYGZsh{}\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{} 666629a031289\PYGZdq{}}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

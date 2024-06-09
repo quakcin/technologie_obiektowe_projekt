@@ -1,0 +1,22 @@
+\section{Podsumowanie}
+Projekt można uznać za ukończony. Wszystkie założone funkcjonalności zostały zaprojektowanie i zaimplementowane. Mapper sprostał coraz to nowym wymaganiom stawianym w trakcie trwania semestru. Testy były ważnym narzędziem w trakcie prac nad projektem, nie tylko sprawdzały poprawność wprowadzanych funkcjonalności, ale również nakreślały drogę rozwoju projektu. Dlatego też złożoność testów jest różna, od tych prostszych po te bardziej zaawansowane.
+
+Projekt współpracuje z wieloma formatami, gdzie każdy z nich został sprawdzony przy pomocy przedstawionego zestawu testów. Obsługę wielu formatów można było rozwiązać na dwa główne sposoby:
+\paragraph{Pierwszy:} dla każdego formatu można było stworzyć dedykowany mapper, wymagałoby to znacznych zmian w istniejącym kodzie. Tak naprawdę to należałoby rozdzielić istniejącą mechanikę na dwie, obsługę plików \textit{.csv} oraz klasę do zarządzania mapowaniem ogólnie. Wiązałoby się to z bardzo dużym nakładem pracy, natomiast sam projekt znacznie odstawałby od swojej pierworodnej idei. 
+\paragraph{Drugi:} można było stworzyć mechanizm konwerterów, współpracujący, z już gotową mechaniką mappera CSV - tak jak to zostało robione. Zastosowane podejście, zdało test, ma ono swoje plusy ale również minusy.
+\paragraph{Plusy:}
+\begin{itemize}
+	\item Stosunkowo mała ilość zmian w istniejącym kodzie.
+	\item Bardzo szybki development nowych dostawców formatów.
+	\item Rozdzielona odpowiedzialność między konwerterami a mapperem.
+	\item Nie ogranicza nas abstrakcja danych w formacie, z perspektywy mappera.
+\end{itemize}
+
+\paragraph{Minusy:}
+\begin{itemize}
+	\item Niska wydajność w porównaniu do dedykowanego mappera konkretnego formatu
+	\item Wszelkie niedociągnięcia następujące w trakcie konwersji.
+\end{itemize}
+
+
+

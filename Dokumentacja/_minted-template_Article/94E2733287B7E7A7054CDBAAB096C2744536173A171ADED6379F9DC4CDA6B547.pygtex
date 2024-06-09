@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}Mapping\PYGZgt{}}
+\PYG{+w}{	}\PYG{n+nt}{\PYGZlt{}Definition\PYGZgt{}}
+\PYG{+w}{		}\PYG{n+nt}{\PYGZlt{}Field\PYGZgt{}}moc\PYG{n+nt}{\PYGZlt{}/Field\PYGZgt{}}
+\PYG{+w}{		}\PYG{n+nt}{\PYGZlt{}Field\PYGZgt{}}id\PYGZsh{}\PYG{n+nt}{\PYGZlt{}/Field\PYGZgt{}}
+\PYG{+w}{	}\PYG{n+nt}{\PYGZlt{}/Definition\PYGZgt{}}
+\PYG{+w}{	}\PYG{n+nt}{\PYGZlt{}Content\PYGZgt{}}
+\PYG{+w}{		}\PYG{n+nt}{\PYGZlt{}Entity\PYGZgt{}}
+\PYG{+w}{			}\PYG{n+nt}{\PYGZlt{}Value\PYGZgt{}}245KM\PYG{n+nt}{\PYGZlt{}/Value\PYGZgt{}}
+\PYG{+w}{			}\PYG{n+nt}{\PYGZlt{}Value\PYGZgt{}}\PYG{+w}{ }66662740bf785\PYG{n+nt}{\PYGZlt{}/Value\PYGZgt{}}
+\PYG{+w}{		}\PYG{n+nt}{\PYGZlt{}/Entity\PYGZgt{}}
+\PYG{+w}{	}\PYG{n+nt}{\PYGZlt{}/Content\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/Mapping\PYGZgt{}}
+\end{Verbatim}

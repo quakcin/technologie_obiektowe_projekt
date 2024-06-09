@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{k}{public} \PYG{k}{function} \PYG{n+nf}{write} \PYG{p}{(}\PYG{n+nv}{\PYGZdl{}file}\PYG{p}{,} \PYG{n+nv}{\PYGZdl{}csv}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n+nv}{\PYGZdl{}lines} \PYG{o}{=} \PYG{n+nb}{explode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n+nv}{\PYGZdl{}csv}\PYG{p}{);}
+			\PYG{n+nv}{\PYGZdl{}header} \PYG{o}{=} \PYG{n+nb}{explode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{};\PYGZdq{}}\PYG{p}{,} \PYG{n+nb}{array\PYGZus{}shift}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}lines}\PYG{p}{));}
+			
+			\PYG{n+nv}{\PYGZdl{}root} \PYG{o}{=} \PYG{p}{(}\PYG{n+nx}{object}\PYG{p}{)} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}entities\PYGZdq{}} \PYG{o}{=\PYGZgt{}} \PYG{p}{[]];}
+			
+			\PYG{k}{foreach} \PYG{p}{(}\PYG{n+nv}{\PYGZdl{}lines} \PYG{k}{as} \PYG{n+nv}{\PYGZdl{}line}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n+nv}{\PYGZdl{}toks} \PYG{o}{=} \PYG{n+nb}{explode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{};\PYGZdq{}}\PYG{p}{,} \PYG{n+nv}{\PYGZdl{}line}\PYG{p}{);}
+				\PYG{n+nv}{\PYGZdl{}newObj} \PYG{o}{=} \PYG{p}{[];}
+				\PYG{k}{for} \PYG{p}{(}\PYG{n+nv}{\PYGZdl{}i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n+nv}{\PYGZdl{}i} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{count}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}toks}\PYG{p}{);} \PYG{n+nv}{\PYGZdl{}i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+					\PYG{n+nv}{\PYGZdl{}newObj}\PYG{p}{[}\PYG{n+nv}{\PYGZdl{}header}\PYG{p}{[}\PYG{n+nv}{\PYGZdl{}i}\PYG{p}{]]} \PYG{o}{=} \PYG{n+nv}{\PYGZdl{}toks}\PYG{p}{[}\PYG{n+nv}{\PYGZdl{}i}\PYG{p}{];}
+				\PYG{p}{\PYGZcb{}}
+				\PYG{n+nv}{\PYGZdl{}root}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{entities}\PYG{p}{[]} \PYG{o}{=} \PYG{p}{(}\PYG{n+nx}{object}\PYG{p}{)} \PYG{n+nv}{\PYGZdl{}newObj}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+			
+			\PYG{n+nb}{file\PYGZus{}put\PYGZus{}contents}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}file} \PYG{o}{.} \PYG{l+s+s2}{\PYGZdq{}.json\PYGZdq{}}\PYG{p}{,} \PYG{n+nb}{json\PYGZus{}encode}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}root}\PYG{p}{));}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

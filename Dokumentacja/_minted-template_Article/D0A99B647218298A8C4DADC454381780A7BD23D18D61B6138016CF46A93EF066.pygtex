@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{getWysokosc}\PYG{p}{())} \PYG{o}{!=} \PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}student}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{getWysokosc}\PYG{p}{()))} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{getWiek}\PYG{p}{())} \PYG{o}{!=} \PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}student}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{getWiek}\PYG{p}{()))} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{k}{if} \PYG{p}{(}\PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{getImie}\PYG{p}{())} \PYG{o}{!=} \PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}student}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{getImie}\PYG{p}{()))} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

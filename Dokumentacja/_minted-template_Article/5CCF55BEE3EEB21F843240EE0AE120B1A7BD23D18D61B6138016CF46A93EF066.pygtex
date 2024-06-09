@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile} \PYG{n+nx}{instanceof} \PYG{n+nx}{Student}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile} \PYG{n+nx}{instanceof} \PYG{n+nx}{Osoba}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile} \PYG{n+nx}{instanceof} \PYG{n+nx}{Witalny}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

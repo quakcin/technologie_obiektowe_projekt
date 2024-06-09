@@ -1,0 +1,23 @@
+\section{Wstęp}
+\paragraph{Wybrany projekt:} Object CSV Mapper, Object Spreadsheet Mapper \newline
+W części teoretycznej powinno znaleźć się omówienie odwzorowania pomiędzy wybranym językiem obiektowym oraz CSV i .xls, a w części praktycznej ich implementacja. Projekt w trakcie tworzenia został zmodyfikowany. W początkowej wersji zaprojektowano oraz zaimplementowano w pełni funkcjonalny mapper obiektowo-relacyjny na format CSV. W końcowej fazie projektu, postanowiono, zgodnie z ustaleniami poszerzyć wachlarz obsługiwanych formatów. 
+
+\paragraph{Obsługiwane formaty:} .csv, .xlsx, .xml, .json.
+Żródłowa mechanika mappera oparta jest tylko i wyłącznie o format \textbf{.csv}, tzn. wszelkie obiekty mapowane są tylko z lub na ten format. Nie mniej jednak w trakcie rozwoju projektu powstał \mintinline{php}|ExtensionProvider|. Jest to strategia konwersji między-formatowej na etapie operacji IO (odczytu i zapisu). Pozwala to na zdefiniowanie własnego konwertera, dzięki któremu można przekształcić różne formaty z, oraz na .csv. W klasie  \mintinline{php}|CSVMapper| domyślnie powołanym ExtensionProvider'em jest \mintinline{php}|CSVExtensionProvider|. Który de-facto nie dokonuje żadnej konwersji.
+
+\paragraph{Język programowania:} PHP\newline
+Wybrany ze względu na prostotę obsługi obiektów. Oraz \textit{weak typing}. 
+
+\paragraph{Główne funkcjonalności mappera:}
+\begin{itemize} 
+	\item Mapper posiada metodę pozwalającą na odczytanie pojedynczego obiektu z pliku (metoda \mintinline{php}|read()|).
+	\item Mapper posiada możliwość odczytania kolekcji obiektów z pliku.
+	\item Mapper umożliwia zapisanie obiektu do pliku (metoda  \mintinline{php}|save()|).
+	\item Mapper posiada możliwość zapisania kolekcji obiektów do pliku.
+	\item Listy, tablice oraz inne kolekcje mapowane są dynamicznie z powiązanych plików.
+	\item Mechanika mappera oparta jest o format .csv (oddzielany średnikiem).
+	\item Definicja klasy jest wymagana do prawidłowego działania mappera.
+	\item Instancja mappera wstrzykiwana jest do pól z odpowiednim dekoratorem (jak się to przyjęło robić w języku PHP).
+	\item Klasy korzystające z dekoratora do instancjonowania mappera, muszą wykorzystywać trait \footnote{https://www.php.net/manual/en/language.oop5.traits.php} \mintinline{php}|CSVMapperInjector| oraz wywoływać pozyskaną metodę\\ \mintinline{php}|injectDependencies()|.
+	\item Każdy rodzaj klasy odwzorowywany jest w osobnym pliku (za wyjątkiem formatu .xlsx, gdzie obiekty tej samej klasy współdzielą jeden arkusz).
+\end{itemize}

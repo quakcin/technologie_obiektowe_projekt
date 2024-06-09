@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{provideExtension}\PYG{p}{(}\PYG{n+nx}{ExtensionProvider}\PYG{p}{)}
+\end{Verbatim}

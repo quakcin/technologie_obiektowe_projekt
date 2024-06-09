@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{function} \PYG{n+nf}{main} \PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{n+nv}{\PYGZdl{}myObject} \PYG{o}{=} \PYG{n+nv}{\PYGZdl{}this}
+		\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{csvMapper}
+		\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{read}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}./MyClass.csv\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{MyClass}\PYG{o}{::}\PYG{n+na}{class}\PYG{p}{);}
+	
+	\PYG{n+nb}{var\PYGZus{}dump}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}myObject}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZlt{}?}\PYG{n+nx}{php}
+	\PYG{k}{require} \PYG{l+s+s1}{\PYGZsq{}fake\PYGZus{}vendor/autoload.php\PYGZsq{}}\PYG{p}{;}
+	\PYG{k}{require} \PYG{l+s+s1}{\PYGZsq{}vendor/autoload.php\PYGZsq{}}\PYG{p}{;}
+	\PYG{k}{use} \PYG{n+nx}{CSVMapper\PYGZbs{}Boostrapper\PYGZbs{}CSVMapperInjector}\PYG{p}{;}
+	
+	\PYG{k}{class} \PYG{n+nc}{App}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k}{use} \PYG{n+nx}{CSVMapperInjector}\PYG{p}{;}
+		
+		\PYG{k}{public} \PYG{k}{function} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}construct} \PYG{p}{()}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{injectDependencies}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		
+		\PYG{l+s+sd}{/**}
+\PYG{l+s+sd}{		* @CSVMapper}
+\PYG{l+s+sd}{		*/}
+		\PYG{k}{private} \PYG{n+nv}{\PYGZdl{}csvMapper}\PYG{p}{;}
+		
+		\PYG{k}{public} \PYG{k}{function} \PYG{n+nf}{main} \PYG{p}{()}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n+nb}{var\PYGZus{}dump}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{csvMapper}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+		
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{p}{(}\PYG{k}{new} \PYG{n+nx}{App}\PYG{p}{())}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{main}\PYG{p}{();}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}\PYG{n+nv}{\PYGZdl{}fromFile}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{b}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{c}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{a} \PYG{o}{!==} \PYG{n+nv}{\PYGZdl{}fromFile}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{return} \PYG{n+nv}{\PYGZdl{}this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+na}{fail}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
