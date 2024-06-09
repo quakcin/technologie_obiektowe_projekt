@@ -43,10 +43,10 @@ class CSVMapper
 
   public function __construct ()
   {
-    // $this->extensionProvider = new CSVExtensionProvider();
+    $this->extensionProvider = new CSVExtensionProvider();
     // $this->extensionProvider = new XMLExtensionProvider();
     // $this->extensionProvider = new JSONExtensionProvider();
-    $this->extensionProvider = new XLSExtensionProvider();
+    // $this->extensionProvider = new XLSExtensionProvider();
   }
 
   public function provideExtension ($provider)

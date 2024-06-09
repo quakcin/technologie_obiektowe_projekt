@@ -45,6 +45,7 @@ class ReflectorPropIterator extends Iterator
    */
   public function getPath ()
   {
+    return ""; /* WARN: unused */
     if (preg_match("/@CSVMapperPath\((.*?)\)/", $this->docs, $matches)) {
       return $matches[0];
     }
@@ -54,6 +55,7 @@ class ReflectorPropIterator extends Iterator
 
   public function hasPath ()
   {
+    return true; /* WARN: unused */
     return preg_match("/@CSVMapperPath\((.*?)\)/", $this->docs) > 0;
   }
 

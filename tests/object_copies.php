@@ -68,7 +68,6 @@ class TestObjectCopies extends Tests\Test
 
   /**
    * @CSVMapper
-   * @CSVMapperPath(./test.csv)
    */
   private $mapper;
 
