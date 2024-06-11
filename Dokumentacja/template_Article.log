@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.25)  10 JUN 2024 01:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.25)  11 JUN 2024 18:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -587,7 +587,7 @@ mplate_Article.aex <nul: /p x=^%~$PATH:i>> template_Article.aex)...executed.
 
 runsystem(del template_Article.aex)...executed.
 
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 28
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 29
 .
 
 (C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd
@@ -599,27 +599,27 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box64
 )
 (template_Article.aux (Wstęp.aux) (Pomysl.aux) (Testy.aux) (Konwertery.aux)
-(Podsumowanie.aux))
+(Obiektowosc.aux) (Podsumowanie.aux))
 \openout1 = `template_Article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -676,7 +676,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 29.
 
 (template_Article.out) (template_Article.out)
 \@outlinefile=\write5
@@ -685,35 +685,35 @@ Package hyperref Info: Link coloring OFF on input line 28.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-1.
+2.
 
 (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-1.
+2.
 
 (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-31.
+32.
 
 (C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-31.
+32.
 
 (C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 31.
+(Font)              <14.4> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 31.
+(Font)              <10> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 31.
+(Font)              <7> on input line 32.
  [1
 
 {C:/Users/Maciej/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program F
@@ -806,7 +806,7 @@ i-stach, na-to-miast war-to-�ci za-wie-ra-j�ce znak "\T1/lmr/bx/n/12 @\T1/lmr/m
 /n/12 "wskazuj�
  []
 
-<materiały/st-oc.png, id=100, 541.02126pt x 158.5925pt>
+<materiały/st-oc.png, id=120, 541.02126pt x 158.5925pt>
 File: materiały/st-oc.png Graphic file (type png)
 <use materiały/st-oc.png>
 Package pdftex.def Info: materiały/st-oc.png  used on input line 12.
@@ -938,12 +938,12 @@ F46A93EF066.pygtex)
 
 (_minted-template_Article/BCFB551F7AE24945A085849DDEAE712DA7BD23D18D61B6138016C
 F46A93EF066.pygtex)
-<materiały/raport.png, id=126, 638.385pt x 216.81pt>
+<materiały/raport.png, id=146, 638.385pt x 216.81pt>
 File: materiały/raport.png Graphic file (type png)
 <use materiały/raport.png>
 Package pdftex.def Info: materiały/raport.png  used on input line 6.
 (pdftex.def)             Requested size: 390.25534pt x 132.5384pt.
-<materiały/student.png, id=128, 236.885pt x 182.6825pt>
+<materiały/student.png, id=148, 236.885pt x 182.6825pt>
 File: materiały/student.png Graphic file (type png)
 <use materiały/student.png>
 Package pdftex.def Info: materiały/student.png  used on input line 15.
@@ -998,7 +998,7 @@ F46A93EF066.pygtex)
 (_minted-template_Article/494D45B71A08066F5CEC56C3CA2C2B44A7BD23D18D61B6138016C
 F46A93EF066.pygtex) [7{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc
 }{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<materiały/kopie.png, id=146, 618.31pt x 142.5325pt>
+<materiały/kopie.png, id=166, 618.31pt x 142.5325pt>
 File: materiały/kopie.png Graphic file (type png)
 <use materiały/kopie.png>
 Package pdftex.def Info: materiały/kopie.png  used on input line 114.
@@ -1023,7 +1023,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 155.
 See the caption package documentation for explanation.
 
-<materiały/sam_student.png, id=147, 260.975pt x 165.61874pt>
+<materiały/sam_student.png, id=167, 260.975pt x 165.61874pt>
 File: materiały/sam_student.png Graphic file (type png)
 <use materiały/sam_student.png>
 Package pdftex.def Info: materiały/sam_student.png  used on input line 163.
@@ -1054,7 +1054,7 @@ F46A93EF066.pygtex)
 
 (_minted-template_Article/A52466483B001104D4E8943C26343BA8A7BD23D18D61B6138016C
 F46A93EF066.pygtex)
-<materiały/dziedziczenie.png, id=157, 812.03375pt x 158.5925pt>
+<materiały/dziedziczenie.png, id=177, 812.03375pt x 158.5925pt>
 File: materiały/dziedziczenie.png Graphic file (type png)
 <use materiały/dziedziczenie.png>
 Package pdftex.def Info: materiały/dziedziczenie.png  used on input line 203.
@@ -1079,7 +1079,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 251.
 See the caption package documentation for explanation.
 
-<materiały/kompozycja2.png, id=165, 516.93124pt x 158.5925pt>
+<materiały/kompozycja2.png, id=185, 516.93124pt x 158.5925pt>
 File: materiały/kompozycja2.png Graphic file (type png)
 <use materiały/kompozycja2.png>
 Package pdftex.def Info: materiały/kompozycja2.png  used on input line 260.
@@ -1115,7 +1115,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [10 <./materiały/kompozycja2.png (PNG copy)>]
-<materiały/relacje.png, id=175, 332.24126pt x 120.45pt>
+<materiały/relacje.png, id=195, 332.24126pt x 120.45pt>
 File: materiały/relacje.png Graphic file (type png)
 <use materiały/relacje.png>
 Package pdftex.def Info: materiały/relacje.png  used on input line 335.
@@ -1139,7 +1139,7 @@ See the caption package documentation for explanation.
 
 (_minted-template_Article/FCB187FDEF25D75AC89A79DE6355F7B0A7BD23D18D61B6138016C
 F46A93EF066.pygtex)
-<materiały/hierarchia.png, id=182, 860.21375pt x 169.63374pt>
+<materiały/hierarchia.png, id=202, 860.21375pt x 169.63374pt>
 File: materiały/hierarchia.png Graphic file (type png)
 <use materiały/hierarchia.png>
 Package pdftex.def Info: materiały/hierarchia.png  used on input line 6.
@@ -1285,45 +1285,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--317
  []
 
 [16]
-<materiały/excel1.png, id=216, 408.02437pt x 234.8775pt>
+<materiały/excel1.png, id=236, 408.02437pt x 234.8775pt>
 File: materiały/excel1.png Graphic file (type png)
 <use materiały/excel1.png>
 Package pdftex.def Info: materiały/excel1.png  used on input line 320.
 (pdftex.def)             Requested size: 390.25534pt x 224.6591pt.
-<materiały/excel2.png, id=217, 852.93657pt x 41.4047pt>
+<materiały/excel2.png, id=237, 852.93657pt x 41.4047pt>
 File: materiały/excel2.png Graphic file (type png)
 <use materiały/excel2.png>
 Package pdftex.def Info: materiały/excel2.png  used on input line 326.
 (pdftex.def)             Requested size: 433.62pt x 21.04976pt.
-<materiały/excel3.png, id=218, 310.91156pt x 57.21375pt>
+<materiały/excel3.png, id=238, 310.91156pt x 57.21375pt>
 File: materiały/excel3.png Graphic file (type png)
 <use materiały/excel3.png>
 Package pdftex.def Info: materiały/excel3.png  used on input line 332.
 (pdftex.def)             Requested size: 303.53267pt x 55.85605pt.
 ) [17 <./materiały/excel1.png> <./materiały/excel2.png> <./materiały/excel3.
 png>]
+\openout2 = `Obiektowosc.aux'.
+
+ (Obiektowosc.tex
+<materiały/strategia.png, id=249, 483.8075pt x 359.3425pt>
+File: materiały/strategia.png Graphic file (type png)
+<use materiały/strategia.png>
+Package pdftex.def Info: materiały/strategia.png  used on input line 8.
+(pdftex.def)             Requested size: 281.85034pt x 209.35092pt.
+ [18
+
+
+
+ <./materiały/strategia.png (PNG copy)>]
+<materiały/iterator.png, id=255, 419.5675pt x 392.46625pt>
+File: materiały/iterator.png Graphic file (type png)
+<use materiały/iterator.png>
+Package pdftex.def Info: materiały/iterator.png  used on input line 19.
+(pdftex.def)             Requested size: 260.17464pt x 243.36847pt.
+<materiały/lancuch.png, id=256, 666.49pt x 144.54pt>
+File: materiały/lancuch.png Graphic file (type png)
+<use materiały/lancuch.png>
+Package pdftex.def Info: materiały/lancuch.png  used on input line 30.
+(pdftex.def)             Requested size: 433.62pt x 94.0403pt.
+
+Overfull \hbox (1.62567pt too wide) in paragraph at lines 35--36
+\T1/lmr/m/n/12 obiek-tach opa-ko-wu-j�-cych, kt�re za-wie-raj� od-po-wied-nie z
+a-cho-wa-nia. Dzi�ki temu wzor-
+ []
+
+[19 <./materiały/iterator.png (PNG copy)>]
+<materiały/dekorator.png, id=265, 330.23375pt x 111.41624pt>
+File: materiały/dekorator.png Graphic file (type png)
+<use materiały/dekorator.png>
+Package pdftex.def Info: materiały/dekorator.png  used on input line 39.
+(pdftex.def)             Requested size: 173.44534pt x 58.5199pt.
+) [20 <./materiały/lancuch.png (PNG copy)> <./materiały/dekorator.png (PNG co
+py)>]
 \openout2 = `Podsumowanie.aux'.
 
- (Podsumowanie.tex) [18
+ (Podsumowanie.tex) [21
 
 
 
-] (template_Article.aux (Wstęp.aux)
-(Pomysl.aux) (Testy.aux) (Konwertery.aux) (Podsumowanie.aux))
+]
+(template_Article.aux (Wstęp.aux) (Pomysl.aux) (Testy.aux) (Konwertery.aux)
+(Obiektowosc.aux) (Podsumowanie.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `template_Article.out' has not changed.
-(rerunfilecheck)             Checksum: 254500D617AD6E43E7649F3AB30F9CAC;2922.
+(rerunfilecheck)             Checksum: 82E1652514CBEED20A52C0D3C8EB1796;3594.
 runsystem(del template_Article.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 17797 strings out of 475248
- 339240 string characters out of 5767624
+ 17885 strings out of 475248
+ 341615 string characters out of 5767624
  1932785 words of memory out of 5000000
- 38736 multiletter control sequences out of 15000+600000
+ 38803 multiletter control sequences out of 15000+600000
  624072 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,9n,81p,1443b,916s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1346,9 +1384,9 @@ ic/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/f
 onts/type1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/
 lmtti10.pfb>
-Output written on template_Article.pdf (18 pages, 705162 bytes).
+Output written on template_Article.pdf (21 pages, 761948 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 265 words of extra memory for PDF output out of 10000 (max. 10000000)
 
