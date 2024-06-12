@@ -16,20 +16,10 @@ Iterator to behawioralny wzorzec projektowy, który umożliwia sekwencyjne przec
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\textwidth]{materiały/iterator}
+	\includegraphics[width=0.55\textwidth]{materiały/iterator}
 	\caption{Wykorzystanie iteratora}
 \end{figure}
 
-\subsection{Łańcuch zobowiązań}
-Łańcuch zobowiązań to behawioralny wzorzec projektowy, który pozwala przekazywać żądania wzdłuż łańcucha obiektów obsługujących. Otrzymawszy żądanie, każdy z obiektów obsługujących decyduje o jego przetworzeniu lub przekazaniu do kolejnego obiektu obsługującego w łańcuchu. Wzorzec ten jest użyteczny, gdy chcemy oddzielić nadawcę żądania od jego odbiorcy oraz zapewnić możliwość dynamicznego konfigurowania łańcucha obiektów obsługujących. Dzięki temu wzorcowi możemy łatwo modyfikować kolejność i liczbę obiektów przetwarzających żądanie, co zwiększa elastyczność i łatwość utrzymania kodu.
-
-\paragraph{} W przypadku naszego projektu, użyliśmy tego wzorca prawie w całym projekcie. Kod był pisany w taki sposób aby można było go rozwijać na każdym etapie, dzięki czemu naturalnie wyłoniła się struktura łańcucha.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1.0\textwidth]{materiały/lancuch}
-	\caption{Wykorzystanie łańcucha zobowiązań}
-\end{figure}
 
 \subsection{Dekoratror}
 Dekorator to strukturalny wzorzec projektowy, który pozwala dynamicznie dodawać nowe obowiązki obiektom poprzez umieszczanie tych obiektów w specjalnych obiektach opakowujących, które zawierają odpowiednie zachowania. Dzięki temu wzorcowi można rozszerzać funkcjonalność obiektów bez modyfikowania ich kodu bazowego. W kontekście PHP, dekorator może być również implementowany za pomocą cech (traits). Traits w PHP to mechanizm pozwalający na wielokrotne wykorzystanie kodu w różnych klasach.

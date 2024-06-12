@@ -13,6 +13,7 @@ class XLSExtensionProvider implements ExtensionProvider
 
   private $fileName;
   private $spreedSheet;
+  private $ids = [];
 
   public function __construct ($fileName = 'xlsmapper.xlsx')
   {
@@ -36,7 +37,7 @@ class XLSExtensionProvider implements ExtensionProvider
   public function write ($file, $csv)
   {
     $this->spreadSheet = IOFactory::load($this->fileName);
-    $nameCode = substr(md5($file), 0, 31);
+    $nameCode = $this->indexFile($file);
 
     if (!$this->spreadSheet->sheetNameExists($nameCode)) {
       $newSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($this->spreadSheet, $nameCode);
@@ -75,7 +76,7 @@ class XLSExtensionProvider implements ExtensionProvider
 
   public function read ($file)
   {
-    $nameCode = substr(md5($file), 0, 31);
+    $nameCode = $this->indexFile($file);
     $this->spreadSheet->setActiveSheetIndexByName($nameCode);
     $sheet = $this->spreadSheet->getActiveSheet();
 
@@ -102,4 +103,14 @@ class XLSExtensionProvider implements ExtensionProvider
   
     return implode(";", $header) . "\n" . implode("\n", $body);
   }
+
+  public function indexFile ($name)
+  {
+    if (!in_array($name, $this->ids)) {
+      $ids[] = $name;
+    }
+
+    return (string) array_search($name, $this->ids);
+  }
+
 }

@@ -1,4 +1,4 @@
-\section{Testy jednostkowe}
+\section{Testy funkcjonalności}
 W celu zachowania poprawności działania zostały przygotowane testy mające na celu sprawdzanie działania mappera. Testy opiewały o podstawowe funkcjonalności jak i te bardziej złożone. Za wykonywanie testów odpowiedzialny jest plik \mintinline{php}|tests.php|, zawiera on główną klasę \mintinline{php}|Tests|, która w konstruktorze powołuje konkretne testy rozszerzające klasę \mintinline{php}|Test|. Wszystkie testowane klasy zawierają metodę \mintinline{php}|test()|, w której zawarta jest logika testu. Metoda ta, musi zwrócić wartość wywołania  \mintinline{php}|pass()| - jeżeli test się powiedzie, lub \mintinline{php}|fail()| - jeżeli dojdzie to jakiegoś zdarzenia. Metody te odpowiednio obsłużą raportowanie wyników testu. 
 
 \begin{figure}[ht]
