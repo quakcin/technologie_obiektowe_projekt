@@ -13,7 +13,6 @@ class XLSExtensionProvider implements ExtensionProvider
 
   private $fileName;
   private $spreedSheet;
-  private $ids = [];
 
   public function __construct ($fileName = 'xlsmapper.xlsx')
   {
@@ -104,13 +103,28 @@ class XLSExtensionProvider implements ExtensionProvider
     return implode(";", $header) . "\n" . implode("\n", $body);
   }
 
+  /**
+   * Szukami indexu w arkuszu "Index", jeśli nie ma
+   * to go dodajemy
+   */
   public function indexFile ($name)
   {
-    if (!in_array($name, $this->ids)) {
-      $ids[] = $name;
+    $this->spreadSheet->setActiveSheetIndexByName("Index");
+    $sheet = $this->spreadSheet->getActiveSheet();
+
+    foreach ($sheet->getRowIterator() as $row) {
+      $toks = [];
+      foreach ($row->getCellIterator() as $cell) {
+        $toks[] = $cell->getValue();
+      }
+
+      if ($toks[1] == $name) {
+        return $toks[0];
+      }
     }
 
-    return (string) array_search($name, $this->ids);
+    /* Jeśli nie ma to zwracamy */
+    return $sheet->getHighestRow() + 1;
   }
 
 }
